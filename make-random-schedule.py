@@ -17,7 +17,6 @@ def get_reduced_data(major_data):
                 reduced_data_names.remove(prereq['name'])
             lower_division.add(prereq['name'])
             current_prereqs = prereq['prereqs']
-
     return [c_obj for c_obj in major_data if c_obj['name'] in reduced_data_names]
 
 # Gets ordered class list: [last ... first]
@@ -30,7 +29,6 @@ def get_class_path(class_dict):
         current_prereqs = prereq['prereqs']
     return class_path
     
-
 # Gets a random semester number that is not in exclude
 def get_random_semester(start, end, exclude):
     choices = [i for i in range(start, end) if i not in exclude]
@@ -60,7 +58,6 @@ def get_schedule(major_data):
             # if filled semester, add it to filled_semesters
             if len(schedule[semester_num]) == NUM_CLASSES:
                 filled_semesters.add(semester_num)
-
     return schedule
 
 def test():
